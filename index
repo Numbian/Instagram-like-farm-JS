@@ -1,0 +1,26 @@
+function loop() {
+console.log('Script loading…please wait…');
+
+const Time1 = Math.ceil(Math.random() * 2) + 1;
+const Time2 = Math.ceil(Math.random() * 2) + 1;
+
+setTimeout(function() {
+    let likeButton=document.querySelector(".dCJp8");  
+	
+
+   
+    if (likeButton.childNodes[0].className == "glyphsSpriteHeart__filled__24__red_5 u-__7") {
+	    console.log('Photo already liked. Skipping…');
+
+	} else { 
+	    likeButton.click();   
+	}
+	setTimeout(function() {
+		    let nextButton=document.querySelector(".coreSpriteRightPaginationArrow");
+		    nextButton.click();       
+	loop(); 	   
+	}, Time1 * 1000);
+}, Time2 * 1000);
+}
+loop();
+
